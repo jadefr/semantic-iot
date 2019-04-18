@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Data Integration</title>
+
+    <meta name="description" content="">
+    <meta name="author" content="Jade">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style type="text/css">
+        .container-fluid {
+            /*background-image: linear-gradient( #B5B5B5, #FFFFFF);*/
+        }
+
+        footer {
+            height: 100px;
+            bottom: 0;
+            width: 100%;
+            background-color: rgb(51, 51, 51);
+            color: white;
+            text-align: center;
+        }
+
+        .table {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        td:first-child {
+            font-weight: bold
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">Home</a>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Documentation</a>
+            </li>
+            <li class="nav-item active dropdown">
+                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink"
+                   data-toggle="dropdown">Data Sources</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">Dark Sky</a>
+                    <a class="dropdown-item" href="#">Solcast</a>
+                    <a class="dropdown-item" href="#">Open Weather</a>
+                    <a class="dropdown-item" href="#">Weather Station</a>
+                </div>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-md-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Profile<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Settings<span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table">
+                <table id="tbl-sensordata" class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Measurement</th>
+                        <th>Value</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <button type="button" class="btn btn-primary">
+        Button
+    </button>
+    <a id="modal-849475" href="#modal-container-849475" role="button" class="btn" data-toggle="modal">Launch demo
+        modal</a>
+
+    <div class="modal fade" id="modal-container-849475" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="myModalLabel">
+                        Modal title
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-primary">
+                        Save changes
+                    </button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="row mt-5">
+    <footer class="page-footer font-small">
+        <div class="footer-copyright text-center py-3">
+            <p id="texto-rodape">
+                <a class="btn" color="white" href="www.ufjf.br">Universidade Federal de Juiz de Fora</a>
+                <br>2019</br>
+            </p>
+        </div>
+    </footer>
+</div>
+
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script>
+
+
+    $.ajax({
+        url: 'http://13.58.176.181:8080/iot-data-retriever/getdata?providers=solcast,darksky&latitude=-21.758819,-22.458778&longitude=-43.350500,-44.848139'
+        //url: 'http://localhost:8081/iot-data-retriever/darksky?latitude=-21.758819&longitude=-43.350500'
+        //url: 'http://localhost:8081/iot-data-retriever/getdata?providers=solcast,darksky&latitude=-21.758819,-22.458778&longitude=-43.350500,-44.848139'
+    }).done(function (data) {
+
+        var i = 0;
+        $.each(data.jsonData.measurements, function (key, value) {
+
+            console.log("i = " + i + "; key " + key + " :: value " + value);
+
+            var row = $('<tr>');
+            row.append(
+                $('<td>').text(i + 1),
+                $('<td>').text(data.jsonData.measurements[i].characteristic.name),
+                $('<td>').text(data.jsonData.measurements[i].characteristic.value)
+            );
+
+            $('#tbl-sensordata tbody').append(row);
+
+            i++;
+
+        })
+
+
+    });
+
+
+</script>
+
+</body>
+</html>
