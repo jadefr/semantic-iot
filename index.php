@@ -5,7 +5,8 @@ $page = $_REQUEST['page'] ?? 'home'; // faz um isset na variável 'page'; caso e
 $pagesList = [
     'home' => 'home.php',
     'darksky' => 'data-integration-solcast-darksky.php',
-    'solcast' => 'data-integration-solcast-darksky.php'
+    'solcast' => 'data-integration-solcast-darksky.php',
+    'community' => 'community.php'
 ];
 
 $pagesJavascriptsList = [
@@ -14,9 +15,10 @@ $pagesJavascriptsList = [
 ];
 
 $pagesCssList = [
-        'home' => 'home.css',
-        'darksky' => 'data-integration-table.css',
-        'solcast' => 'data-integration-table.css'
+    'home' => 'home.css',
+    'darksky' => 'data-integration-table.css',
+    'solcast' => 'data-integration-table.css',
+    'community' => 'community.css'
 ];
 
 if (!isset($pagesList[$page])) {
@@ -36,11 +38,12 @@ if (!isset($pagesList[$page])) {
     <meta name="description" content="Semantic IoT">
     <meta name="author" content="Jade">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/layout.css" rel="stylesheet">
 
-        <?php if(isset($pagesCssList[$page])) { ?>
-            <link rel="stylesheet" href="css/<?php echo $pagesCssList[$page]; ?>"/>
-        <?php } ?>
+    <?php if (isset($pagesCssList[$page])) { ?>
+        <link rel="stylesheet" href="css/<?php echo $pagesCssList[$page]; ?>"/>
+    <?php } ?>
 
 </head>
 <body>
@@ -66,7 +69,7 @@ if (!isset($pagesList[$page])) {
                 <a class="nav-link" href="#">Documentation</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">Community</a>
+                <a class="nav-link" href="index.php?page=community">Community</a>
             </li>
         </ul>
         <ul class="navbar-nav ml-md-auto">
@@ -79,30 +82,27 @@ if (!isset($pagesList[$page])) {
         </ul>
     </div>
 </nav>
+
 <div class="container-fluid">
-    <?php include('views/'.$pagesList[$page]); ?>
-
-    <div class="row mt-5">
-        <footer class="page-footer font-small">
-            <div class="footer-copyright text-center py-3">
-                <p>
-                    <a class="btn" href="http://www.ufjf.br">Universidade Federal de Juiz de Fora</a>
-                    <br>2019
-                </p>
-
-            </div>
-        </footer>
-    </div>
+    <?php include('views/' . $pagesList[$page]); ?>
 </div>
+
+<footer class="page-footer font-small">
+    <div class="footer-copyright text-center py-3">
+        <p>
+            <a class="btn" href="http://www.ufjf.br">Universidade Federal de Juiz de Fora</a>
+            <br>2019
+        </p>
+    </div>
+</footer>
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-<?php if(isset($pagesJavascriptsList[$page])) { ?>
+<?php if (isset($pagesJavascriptsList[$page])) { ?>
     <script src="js/pages/<?php echo $pagesJavascriptsList[$page]; ?>"></script>
 <?php } ?>
-
 
 
 </body>

@@ -1,18 +1,18 @@
-footer {
+/*footer {
     height: 100px;
     bottom: 0;
     width: 100%;
     background-color: rgb(51, 51, 51);
     color: white;
     text-align: center;
-}
+}*/
 
-.table{
+.table {
     padding: 10px;
-    //cursor: pointer;
+    /*cursor: pointer;*/
 }
 
-td{
+td {
     cursor: pointer;
 }
 

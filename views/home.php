@@ -23,7 +23,7 @@
             <div class="right-side-text">
                 <h3 class="text-center text-muted">Select sources, integrate data, and explore!</h3>
                 <p>
-                    <a class="btn" href="#">Join the community »</a>
+                    <a class="btn" href="index.php?page=community">Join the community »</a>
                 </p>
                 <button type="button" class="btn btn-block btn-primary">Sign up</button>
                 <button type="button" class="btn btn-block btn-outline-primary">Log in</button>
