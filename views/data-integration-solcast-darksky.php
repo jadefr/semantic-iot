@@ -17,8 +17,6 @@
     </div>
 </div>
 
-
-<!--a id="download-button" href="#" class="button">Download</a-->
 <a id="download-button" href="#" class="button">Download</a>
 
 <!-- Modal -->

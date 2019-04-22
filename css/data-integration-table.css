@@ -6,10 +6,20 @@ footer {
     color: white;
     text-align: center;
 }
+
 .table{
     padding: 10px;
+    //cursor: pointer;
+}
+
+td{
     cursor: pointer;
 }
+
 td:first-child {
     font-weight: bold
+}
+
+#download-button {
+    float: right;
 }
