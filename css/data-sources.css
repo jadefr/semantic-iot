@@ -11,32 +11,35 @@ h1 {
     padding-top: 15px;
 }
 
+h5 {
+    padding-bottom: 15px;
+}
+
 .media {
-    padding: 20px 400px;
+    padding: 20px 200px;
 }
 
 .media-body {
     padding: 20px 80px;
 }
 
-/*.card-img-top {
-    width: 100%;
-    height: 15vw;
-    object-fit: cover;
-}*/
-
-#img-logo {
+.img-dimensions {
     width: 500px;
     height: 250px;
 }
 
-
-#ema-logo {
-    height: 250px;
-    width: 250px;
-
+.media-ema {
+    padding: 20px 125px 20px 325px;
 }
 
-#ema-media {
-    padding-right: 500px;
+.media-body-ema {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    /*padding-left: 145px;*/
+    padding-left: 220px;
+}
+
+.ema-dimensions {
+    height: 250px;
+    width: 250px;
 }
