@@ -1,9 +1,54 @@
-footer {
+/*footer {
     height: 100px;
     bottom: 0;
     width: 100%;
     background-color: rgb(51, 51, 51);
     color: white;
     text-align: center;
+}*/
 
+/*****************************************/
+/* LAYOUT                                */
+/*****************************************/
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /*
+    Margem inferior que representa o espaçamento entre o conteúdo da página e o rodapé
+    Deve levar em consideração a altura visível do rodapé
+    Se a altura visível é 100px e queremos espaçamento de 30px, então fica 130px
+    */
+    margin-bottom: 130px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px; /* Essa é a altura que ficará visível do rodapé em páginas com pouco conteúdo */
+}
+
+/* A class footer-inner fica dentro do footer e serve como seu conteúdo, podendo possuir o tamanho que for necessário */
+.footer-inner{
+    min-height: 100px;
+    background-color: rgb(51, 51, 51);
+    color: white;
+    text-align: center;
+    padding: 10px; /* Espaçamento interno, para aninhar bem elementos que possam conter margens */
+}
+
+
+/*****************************************/
+/* UTILIDADES                            */
+/*****************************************/
+
+.text-left {
+    text-align: left;
+}
+.text-right {
+    text-align: right;
 }

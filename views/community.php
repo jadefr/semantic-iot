@@ -1,6 +1,6 @@
 <div class="jumbotron">
 
-    <div class="row" id="title">
+    <div class="row" id="title-box">
         <div class="col">
             <h1 class="text-center">
                 Contribute to our community
@@ -8,35 +8,22 @@
         </div>
     </div>
 
-    <div id="box">
-        <div class="row">
-            <div class="col-md-3">
-                <img id="github-logo" src="files/github-logo.png" alt="GitHub logo" width=130" height="130">
-            </div>
-
-            <div class="col-md-9">
-                <div class="right-side-text">
-                    <h6>Report issues </h6>
-                    <a class="btn" href="#">GitHub »</a>
-                </div>
-            </div>
+    <div class="media">
+        <img class="align-self-center mr-3" id="github-logo" src="files/github-logo.png" alt="GitHub logo" width=122" height="122">
+        <div class="media-body">
+            <h5 class="mt-0">Report issues</h5>
+            <a class="btn" href="https://github.com/pgcc/e-seco/issues">GitHub »</a>
         </div>
     </div>
 
-    <div id="box">
-        <div class="row">
-            <div class="col-md-3">
-                <img id="eseco-logo" src="files/eseco-logo.jpeg" alt="E-SECO logo">
-            </div>
-
-            <div class="col-md-9">
-                <div class="right-side-text">
-                    <h6>Join the scientific community </h6>
-                    <a class="btn" href="#">E-SECO »</a>
-                </div>
-            </div>
+    <div class="media">
+        <img class="align-self-center mr-3" id="eseco-logo" src="files/eseco-logo.jpeg/64x64" alt="E-SECO logo">
+        <div class="media-body">
+            <h5 class="mt-0">Join the scientific community</h5>
+            <a class="btn" href="http://nenc.ufjf.br:8080/eseco">E-SECO »</a>
         </div>
     </div>
+
 </div>
 
 

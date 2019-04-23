@@ -1,20 +1,11 @@
-/*html {
-    position: relative;
-    min-height: 100%;
+body{
+    background-image: linear-gradient(#DCD9D4, #FFFFFF);
 }
 
-body {
-     margin-bottom: 60px;  Margin bottom by footer height
-}
 
-/*footer {
-    margin-top: 40px;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 60px; Set the fixed height of the footer here
-     line-height: 60px; Vertically center the text there
-    background-color: #f5f5f5;
+/*.container-fluid {
+    background-image: linear-gradient(#DCD9D4, #FFFFFF);
+    background-color: #DCD9D4;
 }*/
 
 .jumbotron {
@@ -23,11 +14,12 @@ body {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
     margin: 40px 200px;
+    background-color: #FFFFFF;
 
 }
 
-#title {
-    margin-bottom: 40px;
+#title-box {
+    margin-bottom: 30px;
 }
 
 .right-side-text {
@@ -35,18 +27,17 @@ body {
     padding-top: 40px;
 }
 
-
-#box {
-    margin-top: 40px;
-    margin-right: 10px;
-    margin-left: 10px;
-    padding: 10px;
-    /*border: 1px solid gray;
-    border-radius: 10px;*/
-}
-
 #eseco-logo {
     border-radius: 100%;
+}
+
+.media {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.media-body {
+    padding: 50px 100px;
 }
 
 

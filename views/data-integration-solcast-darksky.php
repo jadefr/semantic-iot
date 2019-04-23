@@ -17,7 +17,11 @@
     </div>
 </div>
 
-<a id="download-button" href="#" class="button">Download</a>
+<!--a href="#" id="button">Download</a-->
+
+<p class="text-right">
+    <a href="#" class="btn">Download</a>
+</p>
 
 <!-- Modal -->
 <div class="modal fade" id="modal-row" role="dialog">

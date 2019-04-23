@@ -16,24 +16,32 @@ h3 {
     color: rgb(60, 60, 60);
 }
 
-/*footer {
-    height: 100px;
-    bottom: 0;
-    width: 100%;
-    background-color: rgb(51, 51, 51);
-    color: white;
-    text-align: center;
-}*/
+h5 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 
-.right-side-text {
-    padding: 44px;
+.jumbotron {
+    height: 300px;
+}
+
+#join-the-community-text {
+    float: right;
+}
+
+#right-side-box {
     background-color: white;
-    border-radius: 6px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
 }
 
-.jumbotron {
+#right-side-text {
+    padding-bottom: 20px;
+    padding-top: 0px;
+}
+
+
+#left-side-box {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
 }
