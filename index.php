@@ -8,7 +8,8 @@ $pagesList = [
     'solcast' => 'data-integration-solcast-darksky.php',
     'community' => 'community.php',
     'data-sources' => 'data-sources.php',
-    'documentation' => 'documentation.php'
+    'documentation' => 'documentation.php',
+    'get-started' => 'get-started.php'
 ];
 
 $pagesJavascriptsList = [
@@ -23,14 +24,16 @@ $pagesCssList = [
     'solcast' => 'data-integration-table.css',
     'community' => 'community.css',
     'data-sources' => 'data-sources.css',
-    'documentation' => 'documentation.css'
+    'documentation' => 'documentation.css',
+    'get-started' => 'get-started.css'
 ];
 
 $contentList = [
     'home' => "Semantic IoT",
     'community' => "Community",
     'documentation' => "Documentation",
-    'data-sources' => "Data Sources"
+    'data-sources' => "Data Sources",
+    'get-started' => "Get Started"
 ];
 
 if (!isset($pagesList[$page])) {
