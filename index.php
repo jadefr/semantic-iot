@@ -7,12 +7,14 @@ $pagesList = [
     'darksky' => 'data-integration-solcast-darksky.php',
     'solcast' => 'data-integration-solcast-darksky.php',
     'community' => 'community.php',
-    'data-sources' => 'data-sources.php'
+    'data-sources' => 'data-sources.php',
+    'documentation' => 'documentation.php'
 ];
 
 $pagesJavascriptsList = [
     'darksky' => 'darksky.js',
-    'solcast' => 'darksky.js'
+    'solcast' => 'darksky.js',
+    'home' => 'home.js'
 ];
 
 $pagesCssList = [
@@ -20,7 +22,15 @@ $pagesCssList = [
     'darksky' => 'data-integration-table.css',
     'solcast' => 'data-integration-table.css',
     'community' => 'community.css',
-    'data-sources' => 'data-sources.css'
+    'data-sources' => 'data-sources.css',
+    'documentation' => 'documentation.css'
+];
+
+$contentList = [
+    'home' => "Semantic IoT",
+    'community' => "Community",
+    'documentation' => "Documentation",
+    'data-sources' => "Data Sources"
 ];
 
 if (!isset($pagesList[$page])) {
@@ -36,7 +46,12 @@ if (!isset($pagesList[$page])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Semantic IoT</title>
+    <!--title>Semantic IoT</title-->
+
+    <?php if (isset($pagesCssList[$page])) { ?>
+        <title><?php echo $contentList[$page]; ?></title>
+    <?php } ?>
+
     <meta name="description" content="Semantic IoT">
     <meta name="author" content="Jade">
 
@@ -71,7 +86,7 @@ if (!isset($pagesList[$page])) {
                 <a class="nav-link" href="index.php?page=data-sources">Data Sources</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">Documentation</a>
+                <a class="nav-link" href="index.php?page=documentation">Documentation</a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="index.php?page=community">Community</a>

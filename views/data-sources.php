@@ -1,4 +1,4 @@
-<div class="row" id="title-box">
+<div class="row title-box">
     <div class="col">
         <h1 class="text-center">
             Data Sources

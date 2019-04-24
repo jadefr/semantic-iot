@@ -2,7 +2,7 @@ body{
     background-image: linear-gradient(#DCD9D4, #FFFFFF);
 }
 
-#title-box {
+.title-box {
     padding: 30px;
 }
 

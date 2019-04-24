@@ -9,9 +9,9 @@
         <div class="jumbotron" id="left-side-box">
             <h3>Providing meaning to things</h3>
             <p>
-                <h5 class="text-muted">
-                    An intuitive tool for the semantic treatment and integration of IoT data sets
-                </h5>
+            <h5 class="text-muted">
+                An intuitive tool for the semantic treatment and integration of IoT data sets
+            </h5>
             </p>
             <p id="join-the-community-text">
                 <a class="btn" href="index.php?page=community">Join the community »</a>
@@ -29,12 +29,14 @@
             </p-->
             <br>
             <div id="right-side-box-buttons">
-            <p>
-                <button type="button" class="btn btn-block btn-primary">Learn more</button>
-            </p>
-            <p>
-                <button type="button" class="btn btn-block btn-outline-primary">Get started</button>
-            </p>
+                <p>
+                    <button type="button" class="btn btn-block btn-primary" id="learn-more-button">
+                            Learn more
+                    </button>
+                </p>
+                <p>
+                    <button type="button" class="btn btn-block btn-outline-primary" id="get-started-button">Get started</button>
+                </p>
             </div>
         </div>
     </div>
@@ -53,8 +55,8 @@
                         their measurements. The ontology provides high-quality machine-readable data which serves as
                         the basis for computational analysis.</p>
                     <p>
-                        <a class="btn" href="#">Overview »</a>
-                        <a class="btn" href="#">Download »</a>
+                        <a class="btn" href="#" onclick="">Overview »</a>
+                        <a class="btn" href="https://github.com/jadefr/ontology-wcm">Download »</a>
                     </p>
                 </div>
             </div>
@@ -80,7 +82,7 @@
                     <h5 class="card-title">Environmental Sciences</h5>
                     <p class="card-text">Get environmental data from field sensors.</p>
                     <p>
-                        <a class="btn" href="#">Overview »</a>
+                        <a class="btn" href="index.php?page=data-sources">Overview »</a>
                     </p>
                 </div>
             </div>
