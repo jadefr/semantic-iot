@@ -29,48 +29,54 @@
                 </div>
             </div>
             <hr>
-            <h3 class="text-center">Data Sources</h3>
-            <div class="options">
-                <div class="form-check-inline">
-                    <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" name="gridRadios" id="gridRadios1"
-                               value="option1"
-                               checked>
-                        Dark Sky
-                    </label>
-                </div>
-                <div class="form-check-inline">
-                    <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" name="gridRadios" id="gridRadios2"
-                               value="option2">
-                        Solcast
-                    </label>
-                </div>
-                <div class="form-check-inline disabled">
-                    <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" name="gridRadios" id="gridRadios3"
-                               value="option3"
-                               disabled>
-                        Open Weather
-                    </label>
-                </div>
-                <div class="form-check-inline disabled">
-                    <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" name="gridRadios" id="gridRadios4"
-                               value="option3"
-                               disabled>
-                        E.M.A.
-                    </label>
+
+            <div class="parent-block">
+                <h3>Data Sources</h3>
+                <div class="inside-block"></div>
+                <div class="options">
+                    <div class="form-check-inline">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="checkbox" name="gridRadios" id="gridRadios1"
+                                   value="option1"
+                                   checked>
+                            Dark Sky
+                        </label>
+                    </div>
+                    <div class="form-check-inline">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="checkbox" name="gridRadios" id="gridRadios2"
+                                   value="option2">
+                            Solcast
+                        </label>
+                    </div>
+                    <div class="form-check-inline disabled">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="checkbox" name="gridRadios" id="gridRadios3"
+                                   value="option3"
+                                   disabled>
+                            Open Weather
+                        </label>
+                    </div>
+                    <div class="form-check-inline disabled">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="checkbox" name="gridRadios" id="gridRadios4"
+                                   value="option3"
+                                   disabled>
+                            E.M.A.
+                        </label>
+                    </div>
                 </div>
             </div>
-
 
             <div class="form-group row">
                 <div class="offset-sm-2 col-sm-10">
                     <button type="submit" class="btn btn-outline-primary">Submit</button>
                 </div>
             </div>
-        </form>
     </div>
+
+
+    </form>
+</div>
 </div>
 

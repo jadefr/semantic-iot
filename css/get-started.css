@@ -23,12 +23,20 @@ h5 {
     padding-bottom: 10px;
 }
 
-.options {
+.parent-block {
+    text-align: center;
+}
+
+.inside-block {
+    display: inline-block;
+}
+
+/*.options {
     padding-top: 0;
     padding-right: 160px;
     padding-left: 160px;
     padding-bottom: 20px;
-}
+}*/
 
 button {
     float: right;
