@@ -13,7 +13,8 @@
 
 <div class="row">
     <div class="col">
-        <div class="jumbotron" id="ontology-box">
+        <div class="jumbotron">
+            <a id="ontology-box"></a>
             <h3>Semantic Technology - Ontology</h3>
             <hr>
             <p class="text-muted">
@@ -28,7 +29,8 @@
                 <a class="btn" href="https://github.com/jadefr/ontology-wcm">Weather Conditions Ontology »</a>
             </p>
         </div>
-        <div class="jumbotron" id="wsn-box">
+        <div class="jumbotron">
+            <a id="wsn-box"></a>
             <h3>Wireless Sensor Networks</h3>
             <hr>
             <p class="text-muted">
@@ -42,7 +44,8 @@
                 <a class="btn" href="https://www.sciencedirect.com/science/article/pii/S1389128601003024">See literature »</a>
             </p>
         </div>
-        <div class="jumbotron" id="semantic-iot">
+        <div class="jumbotron">
+            <a id="semantic-iot"></a>
             <h3>Semantic IoT Platform</h3>
             <hr>
             <p class="text-muted">

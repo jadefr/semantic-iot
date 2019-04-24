@@ -55,7 +55,7 @@
                         their measurements. The ontology provides high-quality machine-readable data which serves as
                         the basis for computational analysis.</p>
                     <p>
-                        <a class="btn" href="#" onclick="">Overview »</a>
+                        <a class="btn" href="index.php?page=documentation#ontology-box">Overview »</a>
                         <a class="btn" href="https://github.com/jadefr/ontology-wcm">Download »</a>
                     </p>
                 </div>
@@ -70,7 +70,7 @@
                         transmit
                         them to the Web.</p>
                     <p>
-                        <a class="btn" href="#">Overview »</a>
+                        <a class="btn" href="index.php?page=documentation#wsn-box">Overview »</a>
                     </p>
                 </div>
             </div>
