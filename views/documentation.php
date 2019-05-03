@@ -56,7 +56,7 @@
                 to the ontology, and integrates them. The data is displayed with context information.
             </p>
             <p>
-                <a class="btn" href="#">Get started »</a>
+                <a class="btn" href="index.php?page=get-started">Get started »</a>
             </p>
         </div>
     </div>

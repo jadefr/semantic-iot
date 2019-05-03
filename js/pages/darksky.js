@@ -1,94 +1,105 @@
+let SensorData = function () {
+
+    this.target = '#tbl-sensordata';
+
+    this.render = function () {
+        let target = this.target;
+
+        $.ajax({
+            //url: 'http://13.58.176.181:8080/iot-data-retriever/getdata?providers=solcast,darksky&latitude=-21.758819,-22.458778&longitude=-43.350500,-44.848139'
+            url: 'http://localhost:8081/iot-data-retriever/getdata?providers=solcast,darksky&latitude=-21.758819,-22.458778&longitude=-43.350500,-44.848139'
+            //url: 'http://localhost:8081/iot-data-retriever/darksky?latitude=-21.758819&longitude=-43.350500'
+        }).done(function (data) {
+
+            // Create the rows of the table
+            $.each(data.jsonData.measurements, function (key, value) {
+
+                characteristicName = value.characteristic.name;
+                characteristicValue = value.characteristic.value;
+
+                var row = $('<tr>');
+                row.append(
+                    $('<td>').text(key + 1),
+                    $('<td>').text(characteristicName),
+                    $('<td>').text(characteristicValue)
+                );
+
+                row.data('sensor-info', value);
+
+                $(target + ' tbody').append(row);
+
+            });
+
+            // Add behaviour
+            $(target + ' tbody tr').on('click', function () {
+                let sensorInfo = $(this).data('sensor-info');
+
+                console.log(sensorInfo);
+
+                characteristicName = sensorInfo.characteristic.name;
+                characteristicValue = sensorInfo.characteristic.value;
+                characteristicStandard = sensorInfo.standard;
+                sensorName = sensorInfo.sensor.name;
+                provider = sensorInfo.provider;
+                definition = sensorInfo.definition;
+
+                /*
+                operatingPropertyName = value.sensor.operatingProperty.name;
+                operatingPropertyStandard = value.sensor.operatingProperty.standard;
+                operatingPropertyValue = value.sensor.operatingProperty.value;
+                operatingRangeName = value.sensor.operatingRange.name;
+                operatingRangeStandard = value.sensor.operatingRange.standard;
+                operatingRangeValue = value.sensor.operatingRange.value;*/
+
+                let modal = $("#modal-row");
+
+                let sensorRow = $("sensor-row");
 
 
-$.ajax({
-    url: 'http://13.58.176.181:8080/iot-data-retriever/getdata?providers=solcast,darksky&latitude=-21.758819,-22.458778&longitude=-43.350500,-44.848139'
-    //url: 'http://localhost:8081/iot-data-retriever/darksky?latitude=-21.758819&longitude=-43.350500'
-    //url: 'http://localhost:8081/iot-data-retriever/getdata?providers=solcast,darksky&latitude=-21.758819,-22.458778&longitude=-43.350500,-44.848139'
-}).done(function (data) {
 
-    //console.log(data.jsonData.measurements);
-
-    var i = 0;
-    $.each(data.jsonData.measurements, function (key, value) {
-
-        //console.log("i = " + i + "; key " + key + " :: value " + value);
-
-        characteristicName = data.jsonData.measurements[i].characteristic.name;
-        characteristicValue = data.jsonData.measurements[i].characteristic.value;
-        characteristicStandard = data.jsonData.measurements[i].standard;
-        sensorName = data.jsonData.measurements[i].sensor.name;
-        operatingPropertyName = data.jsonData.measurements[i].sensor.operatingProperty.name;
-        operatingPropertyStandard = data.jsonData.measurements[i].sensor.operatingProperty.standard;
-        operatingPropertyValue = data.jsonData.measurements[i].sensor.operatingProperty.value;
-        operatingRangeName = data.jsonData.measurements[i].sensor.operatingRange.name;
-        operatingRangeStandard = data.jsonData.measurements[i].sensor.operatingRange.standard;
-        operatingRangeValue = data.jsonData.measurements[i].sensor.operatingRange.value;
-        provider = data.jsonData.measurements[i].provider;
-        definition = data.jsonData.measurements[i].definition;
-
-        console.log(characteristicName + " " + characteristicValue + " " + characteristicStandard + " " + sensorName)
+                modal.find('.modal-title').text(characteristicName);
+                modal.find('#additional-info-table tbody').html("").append(
+                    $('<tr>').append(
+                        $('<td>').text("Value"),
+                        $('<td>').text(characteristicValue)
+                    ),
+                    $('<tr>').append(
+                        $('<td>').text("Unit"),
+                        $('<td>').text(characteristicStandard)
+                    ),
+                    $('<tr>').append(
+                        $('<td>').text("Sensor"),
+                        $('<td>').text(sensorName)
+                    ).data('toggle', 'collapse').data('target','#text'),
+                    $('<tr>').append(
+                        $('<td>').text("Provider"),
+                        $('<td>').text(provider)
+                    ),
+                    $('<tr>').append(
+                        $('<td>').text("Definition"),
+                        $('<td>').text(definition)
+                    )
+                );
 
 
-        var row = $('<tr>');
-        row.append(
-            $('<td>').text(i + 1),
-            $('<td>').text(characteristicName),
-            $('<td>').text(characteristicValue)
-        );
+                modal.modal();
 
-        $('#tbl-sensordata tbody').append(row);
+            });
 
 
-        row.click(function () {
-            $("#modal-row").modal();
         });
 
-        //additional info table header
-        $("#additional-info-table thead").text(characteristicName);
+
+    };
 
 
-        function Add() {
-            $("#additional-info-table tbody").append(
-                "<tr>" +
-                "<td><input type='text'/></td>" +
-                "<td><input type='text'/></td>" +
-                "<td><input type='text'/></td>" +
-                //"<td><img src='images/disk.png' class='btnSave'><img src='images/delete.png' class='btnDelete'/></td>"+
-                "</tr>");
-
-            /*$(".btnSave").bind("click", Save);
-            $(".btnDelete").bind("click", Delete);*/
-        };
+};
 
 
-        /* var additionalInfoRow = $('<tr>');
+(function () {
+    let sd = new SensorData();
 
-
-         //1st row
-         $("#additional-info-table tbody tr td").text("value");
-         $("#additional-info-table tbody tr td").text(characteristicValue);
-
-         //2nd row
-         $("#additional-info-table tbody tr td").text("unit");
-         $("#additional-info-table tbody tr td").text(characteristicStandard);
-
-         //3rd row
-         $("#additional-info-table tbody tr td").text("sensor");
-         $("#additional-info-table tbody tr td").text(sensorName);
-
-         //4th row
-         $("#additional-info-table tbody tr td").text("provider");
-         $("#additional-info-table tbody tr td").text(sensorName);
-
-         //5th row
-         $("#additional-info-table tbody tr td").text("definition");
-         $("#additional-info-table tbody tr td").text(definition);*/
-
-        i++;
-
-    })
-
-
-});
+    sd.render();
+})();
 
 

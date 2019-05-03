@@ -33,7 +33,8 @@ $contentList = [
     'community' => "Community",
     'documentation' => "Documentation",
     'data-sources' => "Data Sources",
-    'get-started' => "Get Started"
+    'get-started' => "Get Started",
+    'darksky' => "Data Integration"
 ];
 
 if (!isset($pagesList[$page])) {
@@ -75,32 +76,16 @@ if (!isset($pagesList[$page])) {
     <a class="navbar-brand" href="/">Semantic IoT</a>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="navbar-nav">
-            <!--li class="nav-item active dropdown">
-                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink"
-                   data-toggle="dropdown">Data Sources</a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="index.php?page=darksky">Dark Sky</a>
-                    <a class="dropdown-item" href="index.php?page=solcast">Solcast</a>
-                    <a class="dropdown-item" href="#">Open Weather</a>
-                    <a class="dropdown-item" href="#">Weather Station</a>
-                </div>
-            </li-->
             <li class="nav-item active">
                 <a class="nav-link" href="index.php?page=data-sources">Data Sources</a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="index.php?page=documentation">Documentation</a>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="index.php?page=community">Community</a>
-            </li>
         </ul>
         <ul class="navbar-nav ml-md-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="#">Profile<span class="sr-only">(current)</span></a>
-            </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">Settings<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="index.php?page=community">Community</a>
             </li>
         </ul>
     </div>

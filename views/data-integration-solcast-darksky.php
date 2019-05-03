@@ -9,9 +9,7 @@
                     <th>Value</th>
                 </tr>
                 </thead>
-                <tbody>
-
-                </tbody>
+                <tbody></tbody>
             </table>
         </div>
     </div>
@@ -25,32 +23,23 @@
 
 <!-- Modal -->
 <div class="modal fade" id="modal-row" role="dialog">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
 
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
-                <!--button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Modal Header</h4-->
+                <h4 class="modal-title">Modal Header</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
-            <div class="modal-body">
-                <div class="table">
-                    <table id="additional-info-table" class="table table-hover">
-                        <thead>
 
-                        </thead>
-                        <tbody>
-                        <!--tr><td>1</td></tr>
-                        <tr><td>2</td></tr>
-                        <tr><td>3</td></tr>
-                        <tr><td>4</td></tr>
-                        <tr><td>5</td></tr-->
-                        </tbody>
-                    </table>
-                </div>
+            <div class="table-responsible">
+                <table id="additional-info-table" class="table table-hover">
+                    <tbody></tbody>
+                </table>
             </div>
+
             <div class="modal-footer">
-                <!--button type="button" class="btn btn-default" data-dismiss="modal">Close</button-->
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
 
@@ -58,5 +47,8 @@
 </div>
 
 
-
-
+<div id="text" class="collapse">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+</div>

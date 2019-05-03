@@ -29,7 +29,7 @@
             <a class="btn" href="https://github.com/pgcc/e-seco/issues">GitHub »</a>
         </div>
     </div>
-
+    <hr>
     <div class="media">
         <img class="align-self-center mr-3" id="eseco-logo" src="files/eseco-logo.jpeg/64x64" alt="E-SECO logo">
         <div class="media-body">
