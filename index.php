@@ -4,18 +4,20 @@ $page = $_REQUEST['page'] ?? 'home'; // faz um isset na variável 'page'; caso e
 
 $pagesList = [
     'home' => 'home.php',
-    'darksky' => 'data-integration-solcast-darksky.php',
-    'solcast' => 'data-integration-solcast-darksky.php',
+    'darksky' => 'data-integration-table.php',
+    'solcast' => 'data-integration-table.php',
     'community' => 'community.php',
     'data-sources' => 'data-sources.php',
     'documentation' => 'documentation.php',
-    'get-started' => 'get-started.php'
+    'get-started' => 'get-started.php',
+    'teste' => 'teste.php'
 ];
 
 $pagesJavascriptsList = [
-    'darksky' => 'darksky.js',
-    'solcast' => 'darksky.js',
-    'home' => 'home.js'
+    'darksky' => 'data-integration-table.js',
+    'solcast' => 'data-integration-table.js',
+    'home' => 'home.js',
+    'get-started' => 'get-started.js'
 ];
 
 $pagesCssList = [
@@ -60,6 +62,7 @@ if (!isset($pagesList[$page])) {
     <meta name="author" content="Jade">
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet">
     <link href="css/layout.css" rel="stylesheet">
 
     <?php if (isset($pagesCssList[$page])) { ?>

@@ -19,10 +19,6 @@ h5 {
     padding-bottom: 15px;
 }
 
-.coordinates-form {
-    padding-bottom: 10px;
-}
-
 .parent-block {
     text-align: center;
 }
@@ -31,21 +27,15 @@ h5 {
     display: inline-block;
 }
 
-/*.options {
-    padding-top: 0;
-    padding-right: 160px;
-    padding-left: 160px;
-    padding-bottom: 20px;
-}*/
-
 button {
     float: right;
     padding-top: 30px;
 }
 
-.coordinates-button {
-   padding: 0 150px;
+#coordinates-row {
+    padding: 10px 90px;
 }
+
 
 .jumbotron {
 
@@ -53,6 +43,7 @@ button {
     margin: 30px 250px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
-    background-color: #FFFFFF;
-
+    background-color: white;
+    border-style: double;
+    border-color: darkgrey;
 }

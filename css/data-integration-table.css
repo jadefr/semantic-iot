@@ -8,12 +8,18 @@
 }*/
 
 .table {
-    padding: 10px;
+    padding: 15px;
     /*cursor: pointer;*/
 }
 
-td {
+#tbl-sensordata tr {
     cursor: pointer;
+}
+
+tr.sensor i {
+    cursor: pointer;
+    vertical-align: middle;
+    margin-left: 10px;
 }
 
 td:first-child {

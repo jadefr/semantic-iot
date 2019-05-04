@@ -6,9 +6,7 @@ let SensorData = function () {
         let target = this.target;
 
         $.ajax({
-            //url: 'http://13.58.176.181:8080/iot-data-retriever/getdata?providers=solcast,darksky&latitude=-21.758819,-22.458778&longitude=-43.350500,-44.848139'
-            url: 'http://localhost:8081/iot-data-retriever/getdata?providers=solcast,darksky&latitude=-21.758819,-22.458778&longitude=-43.350500,-44.848139'
-            //url: 'http://localhost:8081/iot-data-retriever/darksky?latitude=-21.758819&longitude=-43.350500'
+            url: 'http://200.131.219.85:8080/iot-data-retriever/getdata?providers=solcast,darksky&latitude=-21.758819,-21.758819&longitude=-43.350500,-43.350500'
         }).done(function (data) {
 
             // Create the rows of the table
@@ -56,7 +54,6 @@ let SensorData = function () {
                 let sensorRow = $("sensor-row");
 
 
-
                 modal.find('.modal-title').text(characteristicName);
                 modal.find('#additional-info-table tbody').html("").append(
                     $('<tr>').append(
@@ -67,19 +64,24 @@ let SensorData = function () {
                         $('<td>').text("Unit"),
                         $('<td>').text(characteristicStandard)
                     ),
-                    $('<tr>').append(
+                    $('<tr>').addClass('sensor').append(
                         $('<td>').text("Sensor"),
-                        $('<td>').text(sensorName)
-                    ).data('toggle', 'collapse').data('target','#text'),
-                    $('<tr>').append(
-                        $('<td>').text("Provider"),
-                        $('<td>').text(provider)
+                        $('<td>').text(sensorName).append(
+                            $('<i>').addClass('fa fa-plus-circle').attr('data-toggle', 'collapse').attr('data-target', '.sensor-details')
+                        ).append(
+                            $('<div>').addClass('sensor-details collapse').text('sensor details')
+                        )
                     ),
+                $('<tr>').append(
+                    $('<td>').text("Provider"),
+                    $('<td>').text(provider)
+                ),
                     $('<tr>').append(
                         $('<td>').text("Definition"),
                         $('<td>').text(definition)
                     )
-                );
+            )
+                ;
 
 
                 modal.modal();
