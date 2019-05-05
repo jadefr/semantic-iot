@@ -1,12 +1,24 @@
-let SensorData = function () {
+let SensorData = function (options) {
 
-    this.target = '#tbl-sensordata';
+    //this.target = '#tbl-sensordata';
+
+    this.latitude = options.latitude;
+    this.longitude = options.longitude;
+    this.providers = options.providers;
+    this.target = options.target;
 
     this.render = function () {
         let target = this.target;
 
+        let serviceUrl = 'http://200.131.219.85:8080/iot-data-retriever/getdata?';
+        serviceUrl += 'providers=' + this.providers;
+        serviceUrl += '&latitude=' + this.latitude;
+        serviceUrl += '&longitude=' + this.longitude;
+
+
+
         $.ajax({
-            url: 'http://200.131.219.85:8080/iot-data-retriever/getdata?providers=solcast,darksky&latitude=-21.758819,-21.758819&longitude=-43.350500,-43.350500'
+            url: serviceUrl
         }).done(function (data) {
 
             // Create the rows of the table
@@ -99,7 +111,12 @@ let SensorData = function () {
 
 
 (function () {
-    let sd = new SensorData();
+    let sd = new SensorData({
+        latitude: $('#latitude').val(),
+        longitude: $('#longitude').val(),
+        providers: $('#providers').val(),
+        target: '#tbl-sensordata'
+    });
 
     sd.render();
 })();

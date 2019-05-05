@@ -4,26 +4,22 @@ $page = $_REQUEST['page'] ?? 'home'; // faz um isset na variável 'page'; caso e
 
 $pagesList = [
     'home' => 'home.php',
-    'darksky' => 'data-integration-table.php',
-    'solcast' => 'data-integration-table.php',
+    'data-integration' => 'data-integration-table.php',
     'community' => 'community.php',
     'data-sources' => 'data-sources.php',
     'documentation' => 'documentation.php',
     'get-started' => 'get-started.php',
-    'teste' => 'teste.php'
 ];
 
 $pagesJavascriptsList = [
-    'darksky' => 'data-integration-table.js',
-    'solcast' => 'data-integration-table.js',
+    'data-integration' => 'data-integration-table.js',
     'home' => 'home.js',
     'get-started' => 'get-started.js'
 ];
 
 $pagesCssList = [
     'home' => 'home.css',
-    'darksky' => 'data-integration-table.css',
-    'solcast' => 'data-integration-table.css',
+    'data-integration' => 'data-integration-table.css',
     'community' => 'community.css',
     'data-sources' => 'data-sources.css',
     'documentation' => 'documentation.css',
@@ -36,7 +32,7 @@ $contentList = [
     'documentation' => "Documentation",
     'data-sources' => "Data Sources",
     'get-started' => "Get Started",
-    'darksky' => "Data Integration"
+    'data-integration' => "Data Integration"
 ];
 
 if (!isset($pagesList[$page])) {
