@@ -16,7 +16,6 @@ let SensorData = function (options) {
         serviceUrl += '&longitude=' + this.longitude;
 
 
-
         $.ajax({
             url: serviceUrl
         }).done(function (data) {
@@ -53,48 +52,119 @@ let SensorData = function (options) {
                 provider = sensorInfo.provider;
                 definition = sensorInfo.definition;
 
-                /*
-                operatingPropertyName = value.sensor.operatingProperty.name;
-                operatingPropertyStandard = value.sensor.operatingProperty.standard;
-                operatingPropertyValue = value.sensor.operatingProperty.value;
-                operatingRangeName = value.sensor.operatingRange.name;
-                operatingRangeStandard = value.sensor.operatingRange.standard;
-                operatingRangeValue = value.sensor.operatingRange.value;*/
+                operatingPropertyName = sensorInfo.sensor.operatingProperty.name;
+                operatingPropertyStandard = sensorInfo.sensor.operatingProperty.standard;
+                operatingPropertyValue = sensorInfo.sensor.operatingProperty.value;
+
+                operatingRangeName = sensorInfo.sensor.operatingRange.name;
+                operatingRangeStandard = sensorInfo.sensor.operatingRange.standard;
+                operatingRangeValue = sensorInfo.sensor.operatingRange.value;
 
                 let modal = $("#modal-row");
 
-                let sensorRow = $("sensor-row");
-
 
                 modal.find('.modal-title').text(characteristicName);
-                modal.find('#additional-info-table tbody').html("").append(
+
+                let additionalInfoTableTbody = modal.find('#additional-info-table tbody').html("");
+
+
+                additionalInfoTableTbody.append(
                     $('<tr>').append(
                         $('<td>').text("Value"),
                         $('<td>').text(characteristicValue)
-                    ),
-                    $('<tr>').append(
-                        $('<td>').text("Unit"),
-                        $('<td>').text(characteristicStandard)
-                    ),
-                    $('<tr>').addClass('sensor').append(
-                        $('<td>').text("Sensor"),
-                        $('<td>').text(sensorName).append(
+                    )
+                );
+
+                if (!characteristicStandard.includes("does not")) {
+                    additionalInfoTableTbody.append(
+                        $('<tr>').append(
+                            $('<td>').text("Unit"),
+                            $('<td>').text(characteristicStandard)
+                        )
+                    )
+                }
+
+                if (!sensorName.includes("does not")) {
+
+                    let sensorInfo = $('<td>').text(sensorName);
+
+                    if (!operatingPropertyName.includes("does not")) {
+                        sensorInfo.append(
+                            $('<i>').addClass('fa fa-plus-circle').attr('data-toggle', 'collapse').attr('data-target', '.sensor-details'),
+
+                            $('<div>').addClass('sensor-details collapse').append(
+                                $('<table>').append(
+
+                                    $('<tr>').append(
+                                    $('<th>').text(""),
+                                    $('<th>').text("Value"),
+                                    $('<th>').text("Unit"),
+                                    ),
+                                    $('<tr>').append(
+                                        $('<td>').text(operatingPropertyName),
+                                        $('<td>').text(operatingPropertyValue),
+                                        $('<td>').text(operatingPropertyStandard)
+                                    ),
+                                    $('<tr>').append(
+                                        $('<td>').text(operatingRangeName),
+                                        $('<td>').text(operatingRangeValue),
+                                        $('<td>').text(operatingRangeStandard)
+                                    )
+                                )
+
+                            )
+                        )
+                    }
+
+
+                    additionalInfoTableTbody.append(
+                        $('<tr>').addClass('sensor').append(
+                            $('<td>').text("Sensor"),
+                            sensorInfo
+
+                            /*.append(
+
                             $('<i>').addClass('fa fa-plus-circle').attr('data-toggle', 'collapse').attr('data-target', '.sensor-details')
                         ).append(
-                            $('<div>').addClass('sensor-details collapse').text('sensor details')
-                        )
-                    ),
-                $('<tr>').append(
-                    $('<td>').text("Provider"),
-                    $('<td>').text(provider)
-                ),
-                    $('<tr>').append(
-                        $('<td>').text("Definition"),
-                        $('<td>').text(definition)
-                    )
-            )
-                ;
 
+
+                            $('<div>').addClass('sensor-details collapse').append(
+                                $('<th>').text(""),
+                                $('<th>').text("Value"),
+                                $('<th>').text("Unit"),
+
+                                $('<tr>').append(
+                                    $('<td>').text("Unit"),
+                                    $('<td>').text(characteristicStandard)
+                                ),
+                                $('<tr>').append(
+                                    $('<td>').text("Unit"),
+                                    $('<td>').text(characteristicStandard)
+                                )
+                            )
+                        )*/
+                        )
+                    )
+
+                }
+
+
+                additionalInfoTableTbody.append(
+                    $('<tr>').append(
+                        $('<td>').text("Provider"),
+                        $('<td>').text(provider)
+                    )
+                );
+
+
+                if (!definition.includes("does not")) {
+                    additionalInfoTableTbody.append(
+                        $('<tr>').append(
+                            $('<td>').text("Definition"),
+                            $('<td>').text(definition)
+                        )
+                    )
+                }
 
                 modal.modal();
 
