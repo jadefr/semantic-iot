@@ -9,6 +9,7 @@ let SensorData = function (options) {
 
     this.render = function () {
         let target = this.target;
+        $(target + ' tbody').html('<tr><td colspan="3"><p class="text-center"><i class="fas fa-spinner fa-pulse"></i> Loading data...</p></td></tr>');
 
         let serviceUrl = 'http://200.131.219.85:8080/iot-data-retriever/getdata?';
         serviceUrl += 'providers=' + this.providers;
@@ -20,6 +21,7 @@ let SensorData = function (options) {
             url: serviceUrl
         }).done(function (data) {
 
+            $(target + ' tbody').html('');
             // Create the rows of the table
             $.each(data.jsonData.measurements, function (key, value) {
 
