@@ -31,10 +31,10 @@
     </div>
     <hr>
     <div class="media">
-        <img class="align-self-center mr-3" id="eseco-logo" src="files/eseco-logo.jpeg/64x64" alt="E-SECO logo">
+        <img class="align-self-center mr-3" id="eseco-logo" src="files/eseco-logo.jpeg" alt="E-SECO logo">
         <div class="media-body">
             <h5 class="mt-0">Join the scientific community</h5>
-            <a class="btn" href="http://nenc.ufjf.br:8080/eseco">E-SECO »</a>
+            <a class="btn" href="http://13.58.225.35:8080/eseco/">E-SECO »</a>
         </div>
     </div>
 
