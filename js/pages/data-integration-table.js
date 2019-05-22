@@ -95,12 +95,13 @@ let SensorData = function (options) {
                             $('<div>').addClass('sensor-details collapse').append(
                                 $('<table>').append(
 
-
+                                    /*
                                     $('<tr>').append(
                                     $('<th>').text(""),
                                     $('<th>').text("Value"),
                                     $('<th>').text("Unit"),
                                     ),
+                                     */
                                     $('<tr>').append(
                                         $('<td>').text(operatingPropertyName),
                                         $('<td>').text(operatingPropertyValue),
