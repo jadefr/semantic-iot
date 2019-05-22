@@ -95,6 +95,7 @@ let SensorData = function (options) {
                             $('<div>').addClass('sensor-details collapse').append(
                                 $('<table>').append(
 
+
                                     $('<tr>').append(
                                     $('<th>').text(""),
                                     $('<th>').text("Value"),

@@ -36,32 +36,30 @@
                     <div class="options">
                         <div class="form-check-inline">
                             <label class="form-check-label">
-                                <input class="form-check-input" type="checkbox" name="provider1"
-                                       id="darksky"
-                                       value="darksky"
-                                       checked>
-                                Dark Sky
+                                <input class="form-check-input" type="checkbox" name="provider2"
+                                       id="solcast"
+                                       value="solcast" checked>
+                                Solcast
                             </label>
                         </div>
                         <div class="form-check-inline">
                             <label class="form-check-label">
-                                <input class="form-check-input" type="checkbox" name="provider2"
-                                       id="solcast"
-                                       value="solcast">
-                                Solcast
+                                <input class="form-check-input" type="checkbox" name="provider1"
+                                       id="darksky"
+                                       value="darksky">
+                                Dark Sky
                             </label>
                         </div>
                         <div class="form-check-inline disabled">
                             <label class="form-check-label">
                                 <input class="form-check-input" type="checkbox" name="provider3" id="openweather"
-                                       value="openweather" disabled>
+                                       value="openweather">
                                 Open Weather
                             </label>
                         </div>
                         <div class="form-check-inline disabled">
                             <label class="form-check-label">
-                                <input class="form-check-input" type="checkbox" name="provider4" id="ema" value="ema"
-                                       disabled>
+                                <input class="form-check-input" type="checkbox" name="provider4" id="ema" value="ema">
                                 E.M.A.
                             </label>
                         </div>
